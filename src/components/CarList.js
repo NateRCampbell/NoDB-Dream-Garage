@@ -5,7 +5,8 @@ import EditCar from "./EditCar";
 // import GarageList from "./GarageList";
 
 const imgStyle = {
-   height: "150px",
+   height: "auto",
+   width: "225px",
 };
 
 class CarList extends Component {
@@ -69,28 +70,30 @@ class CarList extends Component {
    render() {
       console.log(this.state.carsArray);
       return (
-         <div>
+         <div className="car-style">
             <AddCar addCar={this.addCar} />
-            {this.state.carsArray.map((cars) => {
-               return (
-                  <div className="carInfo" style={{ padding: "20px" }}>
-                     <img src={cars.img} style={imgStyle} />
-                     <div> Make: {cars.make} </div>
-                     <div> Model: {cars.model}</div>
-                     <div> Year: {cars.year}</div>
-                     <div> Horse Power: {cars.horsePwr}bhp</div>
-                     <div> Price: ${cars.price}</div>
-                     <EditCar editCar={this.editCar} />
-                     <button
-                        onClick={() => {
-                           this.props.addGarage(cars.id);
-                        }}
-                     >
-                        Add to Garage
-                     </button>
-                  </div>
-               );
-            })}
+            <div className="car-style">
+               {this.state.carsArray.map((cars) => {
+                  return (
+                     <div className="car-info" style={{ padding: "20px" }}>
+                        <img src={cars.img} style={imgStyle} />
+                        <div> Make: {cars.make} </div>
+                        <div> Model: {cars.model}</div>
+                        <div> Year: {cars.year}</div>
+                        <div> Horse Power: {cars.horsePwr}bhp</div>
+                        <div> Price: ${cars.price}</div>
+                        <EditCar editCar={this.editCar} />
+                        <button
+                           onClick={() => {
+                              this.props.addGarage(cars.id);
+                           }}
+                        >
+                           Add to Garage
+                        </button>
+                     </div>
+                  );
+               })}
+            </div>
          </div>
       );
    }

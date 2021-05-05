@@ -23,12 +23,13 @@ module.exports = {
 
    deleteGarage: (req, res) => {
       const { id } = req.params;
-      index = dreamGarage.filter((carId) => {
-         console.log(carId);
-         return carId != id;
+      const newGarageArray = dreamGarage.filter((carObj) => {
+         console.log(carObj);
+         return carObj.id !== id;
       });
+      dreamGarage = newGarageArray;
+      console.log(id);
       // dreamGarage.splice(index, 1);
       res.status(200).send(dreamGarage);
-      console.log(dreamGarage);
    },
 };

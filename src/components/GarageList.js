@@ -44,7 +44,7 @@ class GarageList extends Component {
          <div style={gargaeStyle}>
             {this.props.garageList.map((cars) => {
                return (
-                  <div style={{ padding: "20px" }}>
+                  <div className="car-info" style={{ padding: "20px" }}>
                      <img src={cars.img} style={imgStyle} />
                      <div> Make: {cars.make} </div>
                      <div> Model: {cars.model}</div>
