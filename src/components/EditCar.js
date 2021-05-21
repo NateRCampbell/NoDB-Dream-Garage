@@ -53,26 +53,32 @@ class EditCar extends Component {
       return this.state.editMode ? (
          <div>
             <input
+               placeholder="Make"
                value={this.state.make}
                onChange={(e) => this.handleMake(e.target.value)}
             />
             <input
+               placeholder="Model"
                value={this.state.model}
                onChange={(e) => this.handleModel(e.target.value)}
             />
             <input
+               placeholder="Year"
                value={this.state.year}
                onChange={(e) => this.handleYear(e.target.value)}
             />
             <input
+               placeholder="Horse Power"
                value={this.state.horsePwr}
                onChange={(e) => this.handleHorsePwr(e.target.value)}
             />
             <input
+               placeholder="Price"
                value={this.state.price}
                onChange={(e) => this.handlePrice(e.target.value)}
             />
             <input
+               placeholder="image URL"
                value={this.state.img}
                onChange={(e) => this.handleImg(e.target.value)}
             />

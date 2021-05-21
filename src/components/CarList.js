@@ -5,7 +5,7 @@ import EditCar from "./EditCar";
 // import GarageList from "./GarageList";
 
 const imgStyle = {
-   height: "auto",
+   height: "150px",
    width: "225px",
 };
 
@@ -70,9 +70,10 @@ class CarList extends Component {
    render() {
       console.log(this.state.carsArray);
       return (
-         <div className="car-style">
+         <div className="darktheme">
             <AddCar addCar={this.addCar} />
-            <div className="car-style">
+            <div className="body-style">
+               {/* <div className="car-style"> */}
                {this.state.carsArray.map((cars) => {
                   return (
                      <div className="car-info" style={{ padding: "20px" }}>
@@ -93,6 +94,7 @@ class CarList extends Component {
                      </div>
                   );
                })}
+               {/* </div> */}
             </div>
          </div>
       );

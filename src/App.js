@@ -38,12 +38,12 @@ class App extends React.Component {
    render() {
       return (
          <div className="App">
-            <h1>My Garage</h1>
+            <h1 className="darktheme">My Garage</h1>
             <GarageList
                garageList={this.state.garageList}
                garageRemove={this.removeGarage}
             />
-            <h1>Cars for Sale</h1>
+            <h1 className="darktheme">Cars for Sale</h1>
             <CarList addGarage={this.addGarage} />
          </div>
       );
