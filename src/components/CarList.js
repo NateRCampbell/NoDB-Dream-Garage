@@ -51,8 +51,8 @@ class CarList extends Component {
    //       });
    // };
    editCar = (id, make, model, year, horsePwr, price) => {
-      axios
-         .put(`api/cars/${id}`, {
+      console.log({model},{year})
+      axios.put(`api/cars/${id}`, {
             make,
             model,
             year,
@@ -74,19 +74,19 @@ class CarList extends Component {
             <AddCar addCar={this.addCar} />
             <div className="body-style">
                {/* <div className="car-style"> */}
-               {this.state.carsArray.map((cars) => {
+               {this.state.carsArray.map((car) => {
                   return (
                      <div className="car-info" style={{ padding: "20px" }}>
-                        <img src={cars.img} style={imgStyle} />
-                        <div> Make: {cars.make} </div>
-                        <div> Model: {cars.model}</div>
-                        <div> Year: {cars.year}</div>
-                        <div> Horse Power: {cars.horsePwr}bhp</div>
-                        <div> Price: ${cars.price}</div>
-                        <EditCar editCar={this.editCar} />
+                        <img src={car.img} style={imgStyle} />
+                        <div> Make: {car.make} </div>
+                        <div> Model: {car.model}</div>
+                        <div> Year: {car.year}</div>
+                        <div> Horse Power: {car.horsePwr}bhp</div>
+                        <div> Price: ${car.price}</div>
+                        <EditCar editCar={this.editCar} car={car} />
                         <button
                            onClick={() => {
-                              this.props.addGarage(cars.id);
+                              this.props.addGarage(car.id);
                            }}
                         >
                            Add to Garage

@@ -38,15 +38,16 @@ class EditCar extends Component {
    };
 
    handleSave = () => {
+      const { id, make, model, year, price, horsePwr } = this.props.car;
       this.props.editCar(
-         this.props.cars.id,
-         this.state.make,
-         this.state.model,
-         this.state.year,
-         this.state.horsePwr,
-         this.state.price,
-         this.toggleEdit
+         id,
+         this.state.make || make,
+         this.state.model || model,
+         this.state.year || year,
+         this.state.horsePwr || horsePwr,
+         this.state.price || price
       );
+      this.toggleEdit();
    };
 
    render() {

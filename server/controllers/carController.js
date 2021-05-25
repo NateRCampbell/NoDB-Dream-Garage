@@ -24,8 +24,9 @@ module.exports = {
       const { id } = req.params;
       const { make, model, year, horsePwr, price } = req.body;
       const index = cars.findIndex((e) => {
-         return e.id === +id;
+         return e.id === id;
       });
+      console.log(index);
       cars[index] = {
          ...cars[index],
          make: make,
